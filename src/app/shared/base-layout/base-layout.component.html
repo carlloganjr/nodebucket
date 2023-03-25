@@ -1,23 +1,46 @@
+<!--
+    Title: base-layout.component.html
+    Author: Carl Logan
+    Date: 03/24/2023
+    Description: WEB 450 - nodebucket.
+-->
+
 <div fxLayout="column">
 
   <!-- navigation -->
   <nav fxFlex>
-    <mat-toolbar>
+    <mat-toolbar class="mat-nav" color="primary" fxLayoutAlign="end center">
       <!-- navbar container -->
       <div class="navbar-container">
         <!-- logo -->
         <button class="logo" routerLink="/" mat-button>nodebucket</button>
-
-        <button class="navbar-link" routerLink="/" mat-button>Home</button>
-        <button class="navbar-link" mat-button>About</button>
+        <!-- navigation -->
+        <button class="navbar-link" routerLink="/about" mat-button>About</button>
+        <button class="navbar-link" routerLink="/contact" mat-button>Contact Us</button>
       </div>
 
+      <div>
+        <!-- typical profile icon -->
+        <button mat-icon-button [matMenuTriggerFor]="profileMenu" aria-label="User profile menu">
+          <mat-icon>perm_identity</mat-icon>
+        </button>
+
+        <!-- simple pop down profile menu with employee name and logout button -->
+        <mat-menu #profileMenu>
+          <p class="profile">Signed in as {{ sessionName }}</p>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span>Log out</span>
+          </button>
+        </mat-menu>
+      </div>
     </mat-toolbar>
   </nav>
 
+
   <!-- main content -->
-  <div fxFlex>
-    <main class="main-content" fxFlex="100%;">
+  <div class="content" fxFlex>
+    <main class="main-content">
       <router-outlet></router-outlet>
     </main>
   </div>
@@ -26,10 +49,9 @@
   <div fxFlex>
     <footer class="footer">
       <mat-toolbar class="footer-content">
-        <p>
-          &copy; {{year | date: 'yyyy'}} - nodebucket - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
-        </p>
       </mat-toolbar>
     </footer>
   </div>
+
 </div>
+

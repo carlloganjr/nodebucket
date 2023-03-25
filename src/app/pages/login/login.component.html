@@ -1,0 +1,55 @@
+<!--
+    Title: login.component.html
+    Author: Carl Logan
+    Date: 03/24/2023
+    Description: WEB 450 - nodebucket.
+-->
+
+<div fxLayout="column">
+  <mat-card fxFlex class="login-container">
+    <mat-card-header>
+      <mat-card-title class="login-title">
+        Employee Sign-in Page
+      </mat-card-title>
+      <br>
+      <mat-card-subtitle class="login-subtitle">
+        Enter a valid employee ID to continue.
+      </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="hufflepuff-light-bg">
+
+      <p-messages [(value)]="errorMessages" [enableService]="false"></p-messages>
+
+      <mat-card class="mat-elevation-z10">
+
+      <!-- initiate the login method on form submit -->
+        <form [formGroup]="loginForm" (ngSubmit)="login(); loginForm.reset();">
+          <mat-card-content>
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <input matInput formControlName="empId" placeholder="Employee ID">
+
+              <!-- log in error handling -->
+              <mat-error *ngIf="loginForm.controls['empId'].hasError('required')
+              && loginForm.controls['empId'].touched">
+                Employee ID is a required field.
+              </mat-error>
+
+              <!-- log in error handling -->
+              <mat-error *ngIf="loginForm.controls['empId'].hasError('pattern')
+              && loginForm.controls['empId'].touched">
+                Employee ID must be a number.
+              </mat-error>
+            </mat-form-field>
+          </mat-card-content>
+
+          <mat-card-actions>
+            <button type="submit" fxFlex mat-raised-button [disabled]="!loginForm.valid" class="action-btn">Log in</button>
+          </mat-card-actions>
+        </form>
+      </mat-card>
+
+    </mat-card-content>
+
+  </mat-card>
+</div>

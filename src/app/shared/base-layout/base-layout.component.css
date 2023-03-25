@@ -1,3 +1,10 @@
+/*
+    Title: base-layout.component.css
+    Author: Carl Logan
+    Date: 03/24/2023
+    Description: WEB 450 - nodebucket.
+*/
+
 .logo {
   margin-left: 75px;
   font-size: 24px;
@@ -24,10 +31,16 @@
 }
 
 .footer-content {
+  --hufflepuff-dark: #372e29;
+  --hufflepuff-canary: #ecb939;
+  --hufflepuff-light: #726255;
+
   font-size: 16px;
   font-weight: lighter;
   padding-left: 100px;
   letter-spacing: 3px;
+  background-color: var(--hufflepuff-dark);
+  color: var(--hufflepuff-canary);
 }
 
 .bu-link {
@@ -36,4 +49,19 @@
 
 .bu-link:hover {
   text-decoration: underline;
+}
+
+.mat-nav {
+  --hufflepuff-dark: #372e29;
+  --hufflepuff-canary: #ecb939;
+  --hufflepuff-light: #726255;
+
+  border-bottom: 15px solid var(--hufflepuff-light);
+  background-color: var(--hufflepuff-dark);
+  color: var(--hufflepuff-canary);
+  height: 100px;
+}
+
+.profile {
+  margin: 20px;
 }

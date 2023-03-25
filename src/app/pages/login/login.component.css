@@ -1,0 +1,65 @@
+/*
+    Title: login.component.css
+    Author: Carl Logan
+    Date: 03/24/2023
+    Description: WEB 450 - nodebucket.
+*/
+
+.login-container {
+  width: 35%;
+  margin: 10% auto;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: lighter;
+  padding: 20px;
+}
+
+.login-subtitle {
+  --hufflepuff-canary: #ecb939;
+
+  text-align: center;
+  font-weight: lighter;
+  padding: 5px;
+  color: var(--hufflepuff-canary);
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-card-header {
+  --hufflepuff-dark: #372e29;
+  --hufflepuff-canary: #ecb939;
+
+  background-color: var(--hufflepuff-dark);
+  padding-left: 8%;
+  padding-top: 15px;
+  color: var(--hufflepuff-canary);
+}
+
+.mat-card-content {
+  padding: 20px;
+}
+
+.hufflepuff-light-bg {
+  --hufflepuff-light: #726255;
+
+  background-color: var(--hufflepuff-light);
+}
+
+.mat-card-actions {
+  padding: 25px;
+}
+
+.action-btn {
+  --hufflepuff-dark: #372e29;
+  --hufflepuff-canary: #ecb939;
+
+  height: 50px;
+  font-size: 18px;
+  color: var(--hufflepuff-canary);
+  background-color: var(--hufflepuff-dark);
+}

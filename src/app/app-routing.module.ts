@@ -1,16 +1,42 @@
+/*
+================================================================
+    Title: app-routing.module.ts
+    Author: Carl Logan
+    Date: 03/24/2023
+    Description: WEB 450 - nodebucket.
+================================================================
+*/
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {BaseLayoutComponent} from "./shared/base-layout/base-layout.component";
 import {HomeComponent} from "./pages/home/home.component";
+import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
+import { LoginComponent } from './pages/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
+  // set the home page route but with the condition of logging in first
   {
     path: '',
     component: BaseLayoutComponent,
     children: [
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      }
+    ]
+  },
+
+  // the initial page route that users will see to login in to the home page
+  {
+    path: 'session',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
       }
     ]
   }
