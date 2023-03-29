@@ -1,0 +1,59 @@
+[3/27/2023, 6:57:15 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  todo: [],
+  done: []
+}
+[3/28/2023, 6:31:31 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  todo: [],
+  done: []
+}
+[3/28/2023, 6:32:11 PM] server	 employee-route.js - null
+[3/28/2023, 6:36:31 PM] server	 employee-route.js - null
+[3/28/2023, 6:36:42 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  todo: [],
+  done: []
+}
+[3/28/2023, 6:36:50 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  todo: [],
+  done: []
+}
+[3/28/2023, 6:37:02 PM] server	 employee-route.js - null
+[3/28/2023, 6:40:25 PM] server	 employee-route.js - null
+[3/28/2023, 6:41:24 PM] server	 employee-route.js - null
+[3/28/2023, 6:42:45 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  todo: [],
+  done: []
+}
+[3/28/2023, 6:57:59 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  todo: [],
+  done: []
+}
+[3/28/2023, 7:05:07 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    }
+  ],
+  done: [],
+  __v: 1
+}
