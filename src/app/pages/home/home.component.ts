@@ -1,3 +1,12 @@
+/*
+================================================================
+    Title: home.component.ts
+    Author: Carl Logan
+    Date: 03/30/2023
+    Description: WEB 450 - nodebucket.
+================================================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { TaskService } from 'src/app/shared/task.service';
@@ -28,8 +37,12 @@ export class HomeComponent implements OnInit {
   });
 
   constructor(private taskService: TaskService, private cookieService: CookieService, private fb: FormBuilder) {
-    this.empId = parseInt(this.cookieService.get('session-user'), 10);
+    const cookies = this.cookieService.getAll();
+    this.empId = parseInt(cookies['session_user'], 10);
+
+    console.log('get all cookies:', this.cookieService.getAll());
     console.log('get session-user:', this.cookieService.get('session-user'));
+    console.log('check session-user:', this.cookieService.check('session-user'));
     console.log('home.component parseInt empId:', this.empId);
     this.employee = {} as Employee;
     this.todo = [];

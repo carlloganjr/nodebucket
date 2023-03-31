@@ -1133,3 +1133,431 @@
     }
   ]
 }
+[3/30/2023, 11:19:04 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/30/2023, 11:24:52 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/30/2023, 11:28:39 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/30/2023, 11:28:55 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/30/2023, 11:32:00 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/30/2023, 11:56:55 PM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/31/2023, 12:00:52 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/31/2023, 12:00:52 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/31/2023, 12:01:40 AM] server	 employee-route.js - {
+  _id: new ObjectId("641b43e7431ea2614683f751"),
+  empId: 1012,
+  firstName: 'Sam',
+  lastName: 'Jack',
+  todo: [],
+  done: []
+}
+[3/31/2023, 12:01:40 AM] server	 employee-route.js - {
+  _id: new ObjectId("641b43e7431ea2614683f751"),
+  empId: 1012,
+  todo: [],
+  done: []
+}
+[3/31/2023, 12:03:00 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  firstName: 'Ludwig',
+  lastName: 'Beethoven',
+  __v: 8,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
+[3/31/2023, 12:03:00 AM] server	 employee-route.js - {
+  _id: new ObjectId("641902dd08ae6047c4885282"),
+  empId: 1007,
+  done: [],
+  todo: [
+    {
+      text: 'do something!',
+      _id: new ObjectId("64238ec2c3acc1150d46c22b")
+    },
+    {
+      text: 'do something else',
+      _id: new ObjectId("6424bd01dd3689f45e0ef837")
+    },
+    {
+      text: 'do something else again',
+      _id: new ObjectId("6424be618185e58db65e6ab2")
+    },
+    {
+      text: 'go to bed early',
+      _id: new ObjectId("6424d57cbcc4e52715f25ff1")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d5e7bcc4e52715f25ff8")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d744bcc4e52715f26000")
+    },
+    {
+      text: 'drink water!',
+      _id: new ObjectId("6424d75e2742d386cf149a77")
+    },
+    {
+      text: 'another task!',
+      _id: new ObjectId("6424d7ba2742d386cf149a81")
+    }
+  ]
+}
