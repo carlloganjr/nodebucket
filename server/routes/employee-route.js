@@ -14,16 +14,17 @@ const { debugLogger, errorLogger } = require('../logs/logger');
 const createError = require('http-errors');
 const Ajv = require('ajv');
 const router = express.Router();
+const BaseResponse = require('../models/base-response')
 
 const ajv = new Ajv();
 const myFile = 'employee-route.js';
 
 function checkNum(id) {
-  id = parseInt(id, 10);
-  if(isNaN(id)) {
+  parsedID = parseInt(id, 10);
+  if(isNaN(parsedID)) {
     const err = new Error('Bad Request');
     err.status = 400;
-    console.error('id could not be parsed: ', id);
+    console.error('id could not be parsed: ', parsedID);
     errorLogger({filename: myFile, message: `empId could not be parse ${err.message}`});
     return err;
   }
@@ -80,40 +81,38 @@ const taskSchema = {
  *       '500':
  *         description: Server expectations.
  */
-router.get('/:id', (req, res, next) => {
+router.get('/:id', async(req, res, next) => {
   let empId = req.params.id;
-
+  console.log('empId:', empId);
   // check empId is a number
   // if empId is not a number then inform of a "bad request"
   const err = checkNum(empId);
+  console.log('checkNum:', checkNum(empId));
 
   if(err === false) {
-    // search the database for the employee id
-    Employee.findOne({'empId': req.params.id}, (err, emp) => {
-      if(err) {
-        // log failure
-        console.error('mongodb error: ', err);
-        errorLogger({filename: myFile, message: `NOT FOUND: ${err.message}`});
-        // send the error
-        next(err);
+    try {
+      const emp = await Employee.findOne({'empId': empId});
+
+      if(emp) {
+        console.log(emp);
+        debugLogger({filename: myFile, message: emp});
+        res.send(emp);
       }
-      else if('null') {
-        console.log(createError(404));
+      else {
+        console.error(createError(404));
         errorLogger({filename: myFile, message: createError(404)});
         next(createError(404));
       }
-      else {
-        // log success
-        console.log('emp: ', emp)
-        debugLogger({filename: myFile, message: emp});
-        // send the record
-        res.send(emp);
-      }
-    })
+    }
+    catch(err) {
+      errorLogger({filename: myFile, message: err.message});
+      next(err);
+    }
   }
   else {
-    console.error('id could not be parse: ', empId);
-    errorLogger({filename: myFile, message: `id could not be parsed: ${empId}`});
+    const errorString = `req.params must be a number: ${empId}`;
+    console.error(errorString);
+    errorLogger({filename: myFile, message: errorString});
     next(err);
   }
 });
@@ -275,7 +274,11 @@ router.post('/:id/tasks', async(req, res, next) => {
           const result = await emp.save();
           console.log(result);
           debugLogger({filename: myFile, message: result});
-          res.status(204).send();
+
+          const task = result.todo.pop();
+
+          const newTaskResponse = new BaseResponse(201, 'Task item added successfully.', {id: task._id});
+          res.status(201).send(newTaskResponse);
         }
       }
       else {

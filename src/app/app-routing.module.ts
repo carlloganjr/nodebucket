@@ -29,6 +29,12 @@ const routes: Routes = [
     ]
   },
 
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+
   // the initial page route that users will see to login in to the home page
   {
     path: 'session',

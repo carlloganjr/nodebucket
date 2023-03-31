@@ -1,8 +1,114 @@
+<!--
+    Title: home.component.html
+    Author: Carl Logan
+    Date: 03/30/2023
+    Description: WEB 450 - nodebucket.
+-->
+
 <div fxLayout="column" class="main-welcome">
-  <h1 class="title">
-    Welcome to WEB 450's - nodebucket Project <br />
-    <span class="subtitle">
-      Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait until the last minute to begin working on your tasks.
-    </span>
-  </h1>
+  <div fxFlex>
+    <h1 class="title">
+      Welcome to WEB 450's - nodebucket Project <br />
+      <span class="subtitle">
+        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait until the last minute to begin working on your tasks.
+      </span>
+    </h1>
+  </div>
+
+  <div fxFlex>
+
+    <div class="task-container">
+      <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
+    </div>
+
+    <div class="task-container mat-elevation-z4" fxLayout="column">
+      <mat-card>
+        <form>
+          <mat-card-content>
+            <mat-form-field>
+              <input matInput placeholder="Enter a task name...">
+              <button type="submit" mat-icon-button matSuffix [disabled]="!taskForm.valid">
+                <mat-icon color="primary" matSuffix style="width: 36px; height: 36px; font-size: 36px;">
+                  add_circle
+                </mat-icon>
+              </button>
+            </mat-form-field>
+
+            <mat-error *ngIf="taskForm.controls['task'].hasError('required') && taskForm.controls['task'].touched">
+              Task is a required field.
+            </mat-error>
+
+            <mat-error *ngIf="taskForm.controls['task'].hasError('minlength') && taskForm.controls['task'].touched">
+              The task field must be at least 3 characters in length.
+            </mat-error>
+
+            <mat-error *ngIf="taskForm.controls['task'].hasError('maxlength') && taskForm.controls['task'].touched">
+              The task field cannot exceed 35 characters in length.
+            </mat-error>
+
+          </mat-card-content>
+        </form>
+      </mat-card>
+    </div>
+
+  </div>
+
+  <br>
+
+  <div fxFlex>
+
+    <div fxLayout="row" fxLayoutGap="15px" class="task-container" style="margin-top: 10px;">
+
+      <div fxFlex>
+        <mat-card class="mat-elevation-z0">
+          <mat-card-title>
+            ToDo
+          </mat-card-title>
+          <mat-card-content>
+            <div class="task-column">
+              <div *ngFor="let item of todo">
+                <mat-card class="mat-elevation-z1 task-card">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{item.text}}
+                      </div>
+                      <!-- add icon -->
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <div fxFlex>
+        <mat-card class="mat-elevation-z0">
+          <mat-card-title>
+            Done
+          </mat-card-title>
+          <mat-card-content>
+            <div class="task-column">
+              <div *ngFor="let item of done">
+                <mat-card class="mat-elevation-z1 task-card">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex>
+                        {{item.text}}
+                      </div>
+                      <!-- add icon -->
+                    </div>
+                  </mat-card-content>
+                </mat-card>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>

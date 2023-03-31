@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
           this.cookieService.set('session_user', this.employee.empId.toString(), 1);
           this.cookieService.set('session_name', `${this.employee.firstName} ${this.employee.lastName}`, 1);
           this.router.navigate(['/']);
+          console.log('login.component session cookie:', this.employee.empId);
         }
         else {
           console.log('inside else statement');

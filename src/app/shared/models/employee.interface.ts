@@ -7,9 +7,13 @@
 ================================================================
 */
 
+import { Item } from './item.interface';
+
 // defining the model for the data
 export interface Employee {
   empId: number;
   firstName: string;
   lastName: string;
+  todo: Item[];
+  done: Item[];
 }

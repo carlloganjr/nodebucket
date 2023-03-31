@@ -36,6 +36,10 @@ import { MatDividerModule } from '@angular/material/divider';
 // Primeng imports
 import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,8 @@ import { MessagesModule } from 'primeng/messages';
     HomeComponent,
     AuthLayoutComponent,
     BaseLayoutComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -62,9 +67,15 @@ import { MessagesModule } from 'primeng/messages';
     MatFormFieldModule,
     MatDividerModule,
     MessageModule,
-    MessagesModule
+    MessagesModule,
+    ToastModule,
+    ConfirmDialogModule,
   ],
-  providers: [],
+  providers: [
+    // providers added to aid the Message and Confirmation services
+    MessageService,
+    ConfirmationService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
