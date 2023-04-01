@@ -14,6 +14,7 @@ import {HomeComponent} from "./pages/home/home.component";
 import { AuthLayoutComponent } from './shared/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './auth.guard';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   // set the home page route but with the condition of logging in first
@@ -25,14 +26,18 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard]
-      }
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        canActivate: [AuthGuard]
+      },
     ]
-  },
-
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard]
   },
 
   // the initial page route that users will see to login in to the home page

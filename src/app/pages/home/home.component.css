@@ -44,3 +44,10 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  font-size: 36px;
+  color: #372e29;;
+}

@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
   newTaskId: string;
   newTaskMessage: string;
 
+  // create a FormGroup instance and apply validation
   taskForm: FormGroup = this.fb.group({
     task: [null, Validators.compose([
       Validators.required, Validators.minLength(3), Validators.maxLength(35)
@@ -37,19 +38,16 @@ export class HomeComponent implements OnInit {
   });
 
   constructor(private taskService: TaskService, private cookieService: CookieService, private fb: FormBuilder) {
+    // get cookie data for use in querying the database
     const cookies = this.cookieService.getAll();
     this.empId = parseInt(cookies['session_user'], 10);
-
-    console.log('get all cookies:', this.cookieService.getAll());
-    console.log('get session-user:', this.cookieService.get('session-user'));
-    console.log('check session-user:', this.cookieService.check('session-user'));
-    console.log('home.component parseInt empId:', this.empId);
     this.employee = {} as Employee;
     this.todo = [];
     this.done = [];
     this.newTaskId = '';
     this.newTaskMessage = '';
 
+    // use the taskService to request data from the database
     this.taskService.findAllTasks(this.empId).subscribe({
       next: (res) => {
         this.employee = res
@@ -83,6 +81,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // use the taskService to post data to the database
   createTask() {
     const newTask = this.taskForm.controls['task'].value;
 

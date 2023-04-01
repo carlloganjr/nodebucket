@@ -18,22 +18,26 @@
   <div fxFlex>
 
     <div class="task-container">
+      <!-- primeng UI component that manages the two-way binding for serverMessages -->
+      <!-- the dynamic binding is turned off -->
       <p-messages [(value)]="serverMessages" [enableService]="false"></p-messages>
     </div>
 
     <div class="task-container mat-elevation-z4" fxLayout="column">
       <mat-card>
-        <form>
-          <mat-card-content>
-            <mat-form-field>
-              <input matInput placeholder="Enter a task name...">
+        <!-- initiate the createTask method when a task is submitted -->
+        <form [formGroup]="taskForm" (ngSubmit)="createTask(); taskForm.reset();">
+          <mat-card-content class="w-100">
+            <mat-form-field appearance="fill" style="width: 100%;">
+              <input formControlName="task" matInput placeholder="Enter a task name...">
               <button type="submit" mat-icon-button matSuffix [disabled]="!taskForm.valid">
-                <mat-icon color="primary" matSuffix style="width: 36px; height: 36px; font-size: 36px;">
+                <mat-icon matSuffix class="icon-btn">
                   add_circle
                 </mat-icon>
               </button>
             </mat-form-field>
 
+            <!-- error handling -->
             <mat-error *ngIf="taskForm.controls['task'].hasError('required') && taskForm.controls['task'].touched">
               Task is a required field.
             </mat-error>
@@ -59,10 +63,11 @@
 
     <div fxLayout="row" fxLayoutGap="15px" class="task-container" style="margin-top: 10px;">
 
+      <!-- To Do task column -->
       <div fxFlex>
         <mat-card class="mat-elevation-z0">
           <mat-card-title>
-            ToDo
+            To Do
           </mat-card-title>
           <mat-card-content>
             <div class="task-column">
@@ -83,6 +88,7 @@
         </mat-card>
       </div>
 
+      <!-- Done task column -->
       <div fxFlex>
         <mat-card class="mat-elevation-z0">
           <mat-card-title>

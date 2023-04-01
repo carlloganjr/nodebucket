@@ -1,3 +1,12 @@
+/*
+================================================================
+    Title: contact.component.ts
+    Author: Carl Logan
+    Date: 03/31/2023
+    Description: WEB 450 - nodebucket.
+================================================================
+*/
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({

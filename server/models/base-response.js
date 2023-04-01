@@ -7,6 +7,7 @@
 ================================================================
 */
 
+// this class constructs a typical object for use in responses
 class BaseResponse {
   constructor(httpCode, message, data) {
     this.httpCode = httpCode;
@@ -14,6 +15,7 @@ class BaseResponse {
     this.data = data;
   }
 
+  // create a javascript object
   toObject() {
     return {
       httpCode: this.httpCode,
