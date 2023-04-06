@@ -40,6 +40,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     AuthLayoutComponent,
     BaseLayoutComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
