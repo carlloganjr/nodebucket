@@ -16,6 +16,7 @@ import { Employee } from 'src/app/shared/models/employee.interface';
 import { Item } from 'src/app/shared/models/item.interface';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-home',
@@ -125,6 +126,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // use the taskService to delete data from the database
   deleteTask(taskId: string) {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: {
@@ -139,7 +141,16 @@ export class HomeComponent implements OnInit {
         if(result === 'confirm') {
           this.taskService.deleteTask(this.empId, taskId).subscribe({
             next: (res) => {
+              this.todo = this.todo.filter(task => task._id !== taskId);
+              this.done = this.done.filter(task => task._id !== taskId);
 
+              this.serverMessages = [
+                {
+                  severity: 'success',
+                  summary: 'Success',
+                  detail: 'Task deleted successfully'
+                }
+              ];
             },
             error: (err) => {
               this.serverMessages = [
@@ -148,7 +159,10 @@ export class HomeComponent implements OnInit {
                   summary: 'Error',
                   detail: err.message
                 }
-              ]
+              ];
+            },
+            complete: () => {
+
             }
           })
           // show success message
@@ -158,7 +172,7 @@ export class HomeComponent implements OnInit {
               summary: 'Success',
               detail: 'Task deleted successfully'
             }
-          ]
+          ];
         }
         else {
           // show cancel message
@@ -174,4 +188,41 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  // use the taskService to update the todo and done lists
+  updateTaskList(empId: number, todo: Item[], done: Item[]) {
+    this.taskService.updateTask(empId, todo, done).subscribe({
+      next: (res) => {
+        this.todo = todo;
+        this.done = done;
+      },
+      error: (err) => {
+        this.serverMessages = [
+          {
+            severity: 'error',
+            summary: 'Error',
+            detail: err.message
+          }
+        ];
+      }
+    });
+  }
+
+  // initiate an event when an item is dropped in a different column
+  drop(event: CdkDragDrop<any[]>) {
+    if(event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+      console.log('Reordered tasks in the existing list');
+      this.updateTaskList(this.empId, this.todo, this.done);
+    }
+    else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+      console.log('Moved task item to a new container');
+      this.updateTaskList(this.empId, this.todo, this.done);
+    }
+  }
 }

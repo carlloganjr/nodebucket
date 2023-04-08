@@ -43,25 +43,29 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
         canActivate: [AuthGuard]
-      },
-      {
-        path: '404',
-        component: NotFoundComponent,
-      },
+      }
     ]
   },
 
-  // the initial page route that users will see to login in to the home page
   {
     path: 'session',
     component: AuthLayoutComponent,
     children: [
+      // the initial page route that users will see to login in to the home page
       {
         path: 'login',
         component: LoginComponent
+      },
+      // for any pages not included in the routes
+      {
+        path: 'not-found',
+        component: NotFoundComponent,
       }
     ]
-  }
+  },
+
+  // routing any addresses that are not valid
+  {path: '**', redirectTo: 'session/not-found'}
 ];
 
 @NgModule({

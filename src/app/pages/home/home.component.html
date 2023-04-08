@@ -10,7 +10,7 @@
     <h1 class="title">
       Welcome to WEB 450's - nodebucket Project <br />
       <span class="subtitle">
-        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait until the last minute to begin working on your tasks.
+        Create, drag, drop and delete tasks.
       </span>
     </h1>
   </div>
@@ -70,8 +70,18 @@
             To Do
           </mat-card-title>
           <mat-card-content>
-            <div class="task-column">
-              <div *ngFor="let item of todo">
+            <!-- connect todo and done columns for drag and drop -->
+            <div
+              class="task-column"
+              fxLayout="column"
+              fxLayoutGap="10px"
+              cdkDropList
+              #todoList="cdkDropList"
+              [cdkDropListData]="todo"
+              [cdkDropListConnectedTo]="[doneList]"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div *ngFor="let item of todo" cdkDrag>
                 <mat-card class="mat-elevation-z1 task-card">
                   <mat-card-content>
                     <div fxLayout="row">
@@ -79,7 +89,7 @@
                         {{item.text}}
                       </div>
 
-                      <!-- add icon -->
+                      <!-- delete icon -->
                       <div fxFlex fxLayoutAlign="end" style="margin-top: -7px">
                         <button mat-icon-button (click)="deleteTask(item._id)">
                           <mat-icon color="warn">delete</mat-icon>
@@ -102,15 +112,29 @@
             Done
           </mat-card-title>
           <mat-card-content>
-            <div class="task-column">
-              <div *ngFor="let item of done">
+            <!-- connect todo and done columns for drag and drop -->
+            <div class="task-column"
+              fxLayout="column"
+              fxLayoutGap="10px"
+              cdkDropList
+              #doneList="cdkDropList"
+              [cdkDropListData]="done"
+              [cdkDropListConnectedTo]="[todoList]"
+              (cdkDropListDropped)="drop($event)"
+            >
+              <div *ngFor="let item of done" cdkDrag>
                 <mat-card class="mat-elevation-z1 task-card">
                   <mat-card-content>
                     <div fxLayout="row">
                       <div fxFlex>
                         {{item.text}}
                       </div>
-                      <!-- add icon -->
+                      <!-- delete icon -->
+                      <div fxFlex fxLayoutAlign="end" style="margin-top: -7px">
+                        <button mat-icon-button (click)="deleteTask(item._id)">
+                          <mat-icon color="warn">delete</mat-icon>
+                        </button>
+                      </div>
                     </div>
                   </mat-card-content>
                 </mat-card>

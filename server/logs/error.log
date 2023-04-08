@@ -84,3 +84,4 @@
 [4/6/2023, 10:37:37 AM] server	 employee-route.js - req.params.id must be a number: NaN
 [4/6/2023, 10:40:01 AM] server	 employee-route.js - req.params.id must be a number: NaN
 [4/6/2023, 10:44:32 AM] server	 employee-route.js - empId could not be parse Bad Request
+[4/8/2023, 7:53:36 AM] server	 employee-route.js - Bad Request. Unable to verify req.body schema against taskSchema
