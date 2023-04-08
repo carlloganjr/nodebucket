@@ -78,7 +78,14 @@
                       <div fxFlex>
                         {{item.text}}
                       </div>
+
                       <!-- add icon -->
+                      <div fxFlex fxLayoutAlign="end" style="margin-top: -7px">
+                        <button mat-icon-button (click)="deleteTask(item._id)">
+                          <mat-icon color="warn">delete</mat-icon>
+                        </button>
+                      </div>
+
                     </div>
                   </mat-card-content>
                 </mat-card>

@@ -16,6 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   // set the home page route but with the condition of logging in first
@@ -42,6 +43,10 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: '404',
+        component: NotFoundComponent,
       },
     ]
   },

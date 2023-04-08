@@ -14,6 +14,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Message } from 'primeng/api/message';
 import { Employee } from 'src/app/shared/models/employee.interface';
 import { Item } from 'src/app/shared/models/item.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from 'src/app/shared/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -37,7 +39,8 @@ export class HomeComponent implements OnInit {
     ])]
   });
 
-  constructor(private taskService: TaskService, private cookieService: CookieService, private fb: FormBuilder) {
+  constructor(private taskService: TaskService, private cookieService: CookieService, private fb: FormBuilder,
+    private dialog: MatDialog) {
     // get cookie data for use in querying the database
     const cookies = this.cookieService.getAll();
     this.empId = parseInt(cookies['session_user'], 10);
@@ -120,6 +123,55 @@ export class HomeComponent implements OnInit {
         ]
       }
     });
+  }
+
+  deleteTask(taskId: string) {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: {
+        header: 'Delete Task Dialog',
+        body: 'Are you sure you want to delete this task?'
+      },
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe({
+      next: (result) => {
+        if(result === 'confirm') {
+          this.taskService.deleteTask(this.empId, taskId).subscribe({
+            next: (res) => {
+
+            },
+            error: (err) => {
+              this.serverMessages = [
+                {
+                  severity: 'error',
+                  summary: 'Error',
+                  detail: err.message
+                }
+              ]
+            }
+          })
+          // show success message
+          this.serverMessages = [
+            {
+              severity: 'success',
+              summary: 'Success',
+              detail: 'Task deleted successfully'
+            }
+          ]
+        }
+        else {
+          // show cancel message
+          this.serverMessages = [
+            {
+              severity: 'info',
+              summary: 'Info',
+              detail: 'Deletion canceled'
+            }
+          ]
+        }
+      }
+    })
   }
 
 }

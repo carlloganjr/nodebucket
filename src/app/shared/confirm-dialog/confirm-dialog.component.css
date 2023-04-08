@@ -1,0 +1,11 @@
+/*
+    Title: confirm-dialog.component.css
+    Author: Carl Logan
+    Date: 04/07/2023
+    Description: WEB 450 - nodebucket.
+*/
+
+.dialog-warning {
+  color: red;
+  font-weight: bold;
+}
