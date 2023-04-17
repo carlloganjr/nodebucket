@@ -159,38 +159,58 @@ function getTask(id, tasks) {
  *         description: Server expectations.
  */
 router.get('/:id', async(req, res, next) => {
-  let empId = req.params.id;
-  console.log('empId:', empId);
-  // check empId is a number
-  // if empId is not a number then inform of a "bad request"
-  const err = checkNum(empId);
-  console.log('checkNum:', checkNum(empId));
+  // let empId = req.params.id;
+  // console.log('empId:', empId);
+  // // check empId is a number
+  // // if empId is not a number then inform of a "bad request"
+  // const err = checkNum(empId);
+  // console.log('checkNum:', checkNum(empId));
 
-  if(err === false) {
-    try {
-      const emp = await Employee.findOne({'empId': empId});
+  // if(err === false) {
+  //   try {
+  //     const emp = await Employee.findOne({'empId': empId});
 
-      if(emp) {
-        console.log(emp);
-        debugLogger({filename: myFile, message: emp});
-        res.send(emp);
-      }
-      else {
-        console.error(createError(404));
-        errorLogger({filename: myFile, message: createError(404)});
-        next(createError(404));
-      }
-    }
-    catch(err) {
-      errorLogger({filename: myFile, message: err.message});
-      next(err);
-    }
-  }
-  else {
-    const errorString = `req.params must be a number: ${empId}`;
-    console.error(errorString);
-    errorLogger({filename: myFile, message: errorString});
-    next(err);
+  //     if(emp) {
+  //       console.log(emp);
+  //       debugLogger({filename: myFile, message: emp});
+  //       res.send(emp);
+  //     }
+  //     else {
+  //       console.error(createError(404));
+  //       errorLogger({filename: myFile, message: createError(404)});
+  //       next(createError(404));
+  //     }
+  //   }
+  //   catch(err) {
+  //     errorLogger({filename: myFile, message: err.message});
+  //     next(err);
+  //   }
+  // }
+  // else {
+  //   const errorString = `req.params must be a number: ${empId}`;
+  //   console.error(errorString);
+  //   errorLogger({filename: myFile, message: errorString});
+  //   next(err);
+  // }
+
+  let empId = req.params.id
+  // empId = parseInt(empId, 10)
+
+  // analyzing empId to see if number.
+  if(checkNum(empId)) {
+      checkNum(empId);
+  } else {
+      Employee.findOne({'empId': req.params.id}, function(err, emp) {
+          if (err) {
+              console.error(err)
+              errorLogger({filename: myFile, message: err.message})
+              next(err)
+          } else {
+              console.log('emp:', emp)
+              debugLogger({filename: myFile, message: emp})
+              res.send(emp)
+          }
+      })
   }
 });
 

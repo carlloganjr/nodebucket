@@ -85,3 +85,9 @@
 [4/6/2023, 10:40:01 AM] server	 employee-route.js - req.params.id must be a number: NaN
 [4/6/2023, 10:44:32 AM] server	 employee-route.js - empId could not be parse Bad Request
 [4/8/2023, 7:53:36 AM] server	 employee-route.js - Bad Request. Unable to verify req.body schema against taskSchema
+[4/10/2023, 6:47:10 PM] server	 employee-route.js - NotFoundError: Not Found
+[4/10/2023, 6:47:53 PM] server	 employee-route.js - NotFoundError: Not Found
+[4/16/2023, 4:24:01 PM] server	 employee-route.js - NotFoundError: Not Found
+[4/16/2023, 4:39:40 PM] server	 employee-route.js - test
+[4/16/2023, 5:09:39 PM] server	 employee-route.js - NotFoundError: Not Found
+[4/16/2023, 5:09:56 PM] server	 employee-route.js - NotFoundError: Not Found
